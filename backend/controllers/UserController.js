@@ -1,5 +1,8 @@
 const UserRegister=async(req,res)=>{
-    res.send("User register")
+    if(!req.body.email){
+       res.status(400)
+       throw new Error("Please add an email")
+    }
 }
 
 module.exports={
